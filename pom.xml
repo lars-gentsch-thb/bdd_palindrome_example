@@ -13,9 +13,10 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <cucumber.version>1.2.5</cucumber.version>
-    <junit.version>4.12</junit.version>
-    <assertj.version>3.2.0</assertj.version>
+    <cucumber.version>4.8.0</cucumber.version>
+    <junit.version>5.5.2</junit.version>
+    <assertj.version>3.14.0</assertj.version>
+    <assertj.version>3.14.0</assertj.version>
 
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
@@ -25,25 +26,25 @@
   <dependencies>
 
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>info.cukes</groupId>
+      <groupId>io.cucumber</groupId>
       <artifactId>cucumber-java</artifactId>
       <version>${cucumber.version}</version>
-      <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>info.cukes</groupId>
+      <groupId>io.cucumber</groupId>
       <artifactId>cucumber-junit</artifactId>
       <version>${cucumber.version}</version>
       <scope>test</scope>
     </dependency>
+
 
     <dependency>
       <groupId>org.assertj</groupId>
