@@ -12,15 +12,10 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-    <cucumber.version>4.8.0</cucumber.version>
-    <junit.version>5.5.2</junit.version>
-    <assertj.version>3.14.0</assertj.version>
-    <assertj.version>3.14.0</assertj.version>
-
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-
+    <cucumber.version>6.8.1</cucumber.version>
+    <junit.version>5.7.0</junit.version>
+    <assertj.version>3.17.2</assertj.version>
+    <maven.compiler.release>14</maven.compiler.release>
   </properties>
 
   <dependencies>
@@ -28,6 +23,13 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.vintage</groupId>
+      <artifactId>junit-vintage-engine</artifactId>
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
@@ -45,7 +47,6 @@
       <scope>test</scope>
     </dependency>
 
-
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
@@ -53,4 +54,20 @@
     </dependency>
 
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M5</version>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+      </plugin>
+    </plugins>
+  </build>
 </project>
