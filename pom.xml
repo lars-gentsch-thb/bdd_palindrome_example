@@ -12,9 +12,9 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <cucumber.version>7.14.0</cucumber.version>
-    <junit.version>5.10.0</junit.version>
-    <assertj.version>3.24.2</assertj.version>
+    <cucumber.version>7.20.1</cucumber.version>
+    <junit.version>5.11.3</junit.version>
+    <assertj.version>3.26.3</assertj.version>
     <maven.compiler.release>11</maven.compiler.release>
   </properties>
 
@@ -60,13 +60,13 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.2.1</version>
+        <version>3.5.1</version>
       </plugin>
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.11.0</version>
+        <version>3.13.0</version>
       </plugin>
     </plugins>
   </build>
