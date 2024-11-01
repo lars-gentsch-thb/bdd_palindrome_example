@@ -12,9 +12,9 @@ und das selbe Wort ergibt.
 * "otto"
 * "ehe"
 * "Retsinakanister"
-* ">!<"
 
 ### Beispiele für ungültige Palindrome
 
 * "!!>"
 * " anna"
+* ">!<"
