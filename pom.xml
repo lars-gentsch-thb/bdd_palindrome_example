@@ -7,7 +7,7 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>TDD_Palindrom</name>
+  <name>BDD_Palindrom</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -15,8 +15,21 @@
     <cucumber.version>7.30.0</cucumber.version>
     <junit.version>6.0.0</junit.version>
     <assertj.version>3.27.6</assertj.version>
-    <maven.compiler.release>17</maven.compiler.release>
+    <maven.compiler.release>21</maven.compiler.release>
   </properties>
+
+    <!-- Richtet alle JUnit-Artefakte auf dieselbe Version aus – Cucumber bringt sonst junit-platform-engine 1.x mit -->
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>${junit.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <dependencies>
 
@@ -27,9 +40,10 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- @Suite-Klasse, die Cucumber über die JUnit Platform startet -->
     <dependency>
-      <groupId>org.junit.vintage</groupId>
-      <artifactId>junit-vintage-engine</artifactId>
+      <groupId>org.junit.platform</groupId>
+      <artifactId>junit-platform-suite</artifactId>
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
@@ -38,11 +52,13 @@
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-java</artifactId>
       <version>${cucumber.version}</version>
+      <scope>test</scope>
     </dependency>
 
+    <!-- Cucumber als JUnit-Platform-Engine (ersetzt cucumber-junit + Vintage-Engine) -->
     <dependency>
       <groupId>io.cucumber</groupId>
-      <artifactId>cucumber-junit</artifactId>
+      <artifactId>cucumber-junit-platform-engine</artifactId>
       <version>${cucumber.version}</version>
       <scope>test</scope>
     </dependency>
@@ -51,6 +67,7 @@
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
       <version>${assertj.version}</version>
+      <scope>test</scope>
     </dependency>
 
   </dependencies>
